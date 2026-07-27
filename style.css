@@ -1,108 +1,50 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#ffd1ff);
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.page{
-display:none;
-width:100%;
-height:100%;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.page.active{
-display:flex;
-}
-
-.glass{
-width:95%;
-max-width:420px;
-background:rgba(255,255,255,.2);
-backdrop-filter:blur(18px);
-border-radius:25px;
-padding:30px;
-text-align:center;
-box-shadow:0 10px 40px rgba(0,0,0,.15);
-animation:pop .8s;
-}
-
-@keyframes pop{
-from{
-transform:scale(.8);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
-}
-
-h1,h2,h3{
-color:#fff;
-margin-bottom:15px;
-}
-
-p{
-color:white;
-line-height:1.6;
-}
-
-button{
-margin-top:20px;
-padding:14px 35px;
-border:none;
-border-radius:50px;
-background:#ff4f81;
-color:white;
-font-size:17px;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-.photo{
-width:220px;
-height:220px;
-object-fit:cover;
-border-radius:20px;
-margin:20px auto;
-display:block;
-box-shadow:0 0 35px rgba(255,255,255,.6);
-}
-
 .background-hearts{
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-left:0;
-top:0;
+overflow:hidden;
 pointer-events:none;
-background:url("https://i.imgur.com/YoPfF4i.png");
-opacity:.15;
-animation:bg 30s linear infinite;
+z-index:-1;
 }
 
-@keyframes bg{
-from{
-background-position:0 0;
+.background-hearts::before,
+.background-hearts::after{
+content:"💗 💖 💕 🤍 💜 💗 💖 💕";
+position:absolute;
+width:100%;
+font-size:28px;
+opacity:.15;
+animation:floatHearts 25s linear infinite;
+white-space:nowrap;
 }
-to{
-background-position:0 -1000px;
+
+.background-hearts::after{
+top:50%;
+animation-duration:35s;
+opacity:.1;
 }
+
+@keyframes floatHearts{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-120vh);
+}
+}button{
+box-shadow:0 10px 25px rgba(255,79,129,.35);
+}
+
+button:active{
+transform:scale(.96);
+}.photo{
+border:4px solid rgba(255,255,255,.7);
+transition:.4s;
+}
+
+.photo:hover{
+transform:scale(1.05);
+box-shadow:0 0 45px rgba(255,255,255,.8);
 }
