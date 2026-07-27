@@ -3,75 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Journey of Friendship 💖</title>
-
-<link rel="stylesheet" href="style.css">
+<title>Friendship Renewal 💜</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
 
-<body>
+<style>
 
-<div class="background-hearts"></div>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-<section id="welcome" class="page active">
+body{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#ffd1ff);
+overflow:hidden;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
-<div class="glass">
+.page{
+display:none;
+width:100%;
+height:100%;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
 
-<h3>🎁 A Special Package Has Arrived</h3>
+.page.active{
+display:flex;
+}
 
-<h1>For Tanu 💗</h1>
+.card{
+width:95%;
+max-width:430px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(20px);
+border-radius:30px;
+padding:25px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.2);
+animation:pop .8s;
+}
+
+@keyframes pop{
+from{
+opacity:0;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+h1{
+color:white;
+font-size:30px;
+margin-bottom:15px;
+}
+
+h2{
+color:white;
+margin-bottom:10px;
+}
+
+p{
+color:white;
+line-height:1.7;
+}
+
+.photo{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:22px;
+margin:18px auto;
+display:block;
+box-shadow:0 0 30px rgba(255,255,255,.5);
+}
+
+button{
+padding:14px 35px;
+border:none;
+border-radius:40px;
+font-size:17px;
+background:#ff4f81;
+color:white;
+cursor:pointer;
+margin-top:18px;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.06);
+}
+
+.agreement{
+text-align:left;
+margin-top:20px;
+color:white;
+}
+
+.agreement label{
+display:block;
+margin:12px 0;
+font-size:15px;
+}
+
+input[type=checkbox]{
+margin-right:8px;
+transform:scale(1.2);
+}
+
+.hearts{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+bottom:-40px;
+font-size:24px;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) rotate(0);
+opacity:0;
+}
+20<body>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<div class="card">
+
+<h1>💜 Friendship Renewal</h1>
 
 <p>
-Someone spent time creating a little surprise...
-Open it only if you're ready to smile. 🌸
+Hi <b>Tanu</b> 🌸<br><br>
+
+Before we continue our amazing friendship...<br>
+
+Please renew your friendship agreement 💗
 </p>
 
-<button id="openBtn">
-Open Package 💝
+<button onclick="nextPage(2)">
+Start 💖
 </button>
 
 </div>
 
-</section>
+</div>
 
-<section id="story" class="page">
+<!-- PAGE 2 -->
 
-<div class="glass">
+<div class="page" id="page2">
 
-<h2>Dear Tanu 💖</h2>
+<div class="card">
 
-<p id="typing"></p>
+<h2>📜 Friendship Renewal Agreement</h2>
 
-<button class="nextBtn">
-Continue ➜
+<div class="agreement">
+
+<label><input type="checkbox"> Continue sending random memes 😂</label>
+
+<label><input type="checkbox"> Support each other forever 💖</label>
+
+<label><input type="checkbox"> Reply whenever possible 📱</label>
+
+<label><input type="checkbox"> Never forget important memories 🌸</label>
+
+<label><input type="checkbox"> Maintain friendship for Lifetime ❤️</label>
+
+</div>
+
+<button onclick="nextPage(3)">
+I Accept 💜
 </button>
 
 </div>
 
-</section>
+</div>
 
-<section id="photo1" class="page">
+<!-- PAGE 3 -->
 
-<div class="glass">
+<div class="page" id="page3">
 
-<h2>You Deserve This 🌸</h2>
+<div class="card">
 
-<img src="tanu1.jpg" class="photo">
+<h2>Our Beautiful Friend 💗</h2>
+
+<img src="Tanu1.jpg" class="photo">
 
 <p>
-Every friendship becomes beautiful because of moments like these. 💕
+
+Some people are special without trying...
+
+and you're one of them ✨
+
 </p>
 
-<button class="nextBtn">
+<button onclick="nextPage(4)">
 Next ➜
 </button>
 
 </div>
 
-</section>
+</div>
 
-<script src="script.js"></script>
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<div class="card">
+
+<h2>Always Smile 😊</h2>
+
+<img src="tanu2.jpg" class="photo">
+
+<p>
+
+May your smile always stay this beautiful 💕
+
+Keep shining forever ✨
+
+</p>
+
+<button onclick="nextPage(5)">
+Continue ❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<div class="card">
+
+<h1>💖 Thank You Tanu 💖</h1>
+
+<p>
+
+Friendship Accepted Successfully 🎉
+
+<br><br>
+
+Wishing you lots of happiness,
+
+success and endless smiles 🌸
+
+</p>
+
+<button onclick="location.reload()">
+Start Again 💕
+</button>
+
+</div>
+
+</div><script>
+
+function nextPage(page){
+
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+});
+
+document.getElementById("page"+page).classList.add("active");
+
+if(page>=3){
+createHeart();
+}
+
+}
+
+function createHeart(){
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["💖","💕","💗","💜","🤍"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+document.getElementById("hearts").appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+},350);
+
+}
+
+</script>
 
 </body>
 </html>
